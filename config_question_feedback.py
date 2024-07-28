@@ -25,19 +25,19 @@ HTML_BUTTON = {
 
 }
 
-SYSTEM_INSTRUCTIONS = "You provide pedagogically sound feedback for questions that lack them. Feedback should explain why the correct answer is correct, and provide very brief explanation for why the distractors are incorrect."
+SYSTEM_PROMPT = "You provide pedagogically sound feedback for questions that lack them. Feedback should explain why the correct answer is correct, and provide very brief explanation for why the distractors are incorrect."
 
 PHASES = {
     "phase1": {
         "name": "Feedback",
         "fields": {
-            "welcome": {
+            "question_text": {
                 "type": "text_area",
                 "label": "Question and answer Text:",
                 "height": 200,
                 "placeholder": "Use the following format, where correct answer(s) are indicated by X:\n\nWhat color is the sky?\n\n( ) Red\n(x) Blue\n( ) Green\n"
             },
-            "data": {
+            "source_material": {
                 "type": "text_area",
                 "label": "Enter the source material",
                 "height": 200,
@@ -51,7 +51,7 @@ PHASES = {
 
         },
         "phase_instructions": "",
-        "user_prompt": "Please provide feedback for the following question: ",
+        "user_prompt": "Please provide feedback for the following question: {question_text}",
         "allow_skip": True,
     }
  
